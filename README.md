@@ -1,2 +1,2 @@
 # elrond_fun
-script for fun on elrond network
+scripts for fun on elrond network and not only

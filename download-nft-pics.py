@@ -1,5 +1,5 @@
-import requests
-from PIL import Image
+import requests # don't forget to install this lib, from terminal: pip install requests
+from PIL import Image # don't forget to install this lib, from terminal: pip install pillow
 
 
 def get_png_from_nft(erd: str, collection: str):

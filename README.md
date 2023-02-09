@@ -1,2 +1,2 @@
 # elrond_fun
-scripts for fun on elrond network and not only
+scripts for fun on MultiversX network and not only.

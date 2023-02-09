@@ -1,2 +1,2 @@
 # MVX_FUN
-scripts for fun on MultiversX network and not only.
+Utility fun scripts for MultiversX NFT related topics and not only.

@@ -25,17 +25,17 @@ def json_creator():
         dir_name = f"{dir_name}_{i}"
         os.makedirs(dir_name)
 
-    for i in range(nft_qty):
-        name = f"XXXXXXXXX #{i+1}"
+    for nft in range(nft_qty):
+        name = f"XXXXXXXXX #{nft + 1}"
         description = "XXXXXXXXX_Description"
-        edition = i+1
+        edition = nft + 1
         attributes = []
         for j in range(trait_qty):
             # value = input(f"Enter a value for trait '{trait_names[j]}' in NFT #{i+1}: ") # This can be used to add directly the value from cli eficient only for small number of nft_qty
             value = ''
             attributes.append({"trait_type": trait_names[j], "value": value})
         nft_traits_json = {"name": name, "description": description, "edition": edition, "attributes": attributes}
-        with open(os.path.join(dir_name, f"{i+1}.json"), "w") as f:
+        with open(os.path.join(dir_name, f"{nft + 1}.json"), "w") as f:
             json.dump(nft_traits_json, f, indent=4)
 
 json_creator()

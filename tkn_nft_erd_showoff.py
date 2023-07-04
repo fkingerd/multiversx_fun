@@ -29,9 +29,13 @@ for nft in nfts_unparsed:
         if twitter_handle:
             social_handles[ticker] = twitter_handle
         else:
-            social_handles[ticker] = ticker
+            social_handles[ticker] = ""
 
-ticker_counts = Counter(ticker.split("-")[0] for ticker in social_handles.keys())
+
+ticker_counts = Counter(
+    j.get("ticker").split("-")[0] if j.get("ticker") else j.get("name", "")
+    for j in nfts_unparsed
+)
 
 with open('output.txt', 'w') as f:
     f.write('\tTokens held!\n')

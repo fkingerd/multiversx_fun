@@ -44,7 +44,7 @@ with open('output.txt', 'w') as f:
         decimals = 10 ** token['decimals']
         raw_balance = int(token['balance'])
         balance = f'{raw_balance / decimals:,.2f}'
-        f.write(f"{token['name']}: {balance}\n")
+        f.write(f"${token['identifier'].split('-')[0]}: {balance}\n")
 
     f.write('\n\tNFTs held!\n')
 

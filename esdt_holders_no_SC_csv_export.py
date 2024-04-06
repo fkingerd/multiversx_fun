@@ -54,4 +54,4 @@ def process_addresses_and_write_to_csv(coin_symbol):
             sleep(60)
 
 # Execute the function with the desired coin symbol
-process_addresses_and_write_to_csv("GREEN-1c62ca")
+process_addresses_and_write_to_csv("HIT-3f109b")

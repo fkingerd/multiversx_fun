@@ -29,7 +29,8 @@ def process_addresses_and_write_to_csv(coin_symbol):
             
             for item in data:
                 address = item.get("address")
-                # balance = item.get("balance")
+                balance = item.get("balance")
+                balance = float(balance) / 10**18 
                 
                 # Check if the address is a non-SC address
                 account_url = f"https://api.elrond.com/accounts/{address}"
@@ -43,7 +44,7 @@ def process_addresses_and_write_to_csv(coin_symbol):
                     continue
                 
                 if "ownerAddress" not in account_data and "assets" not in account_data and "code" not in account_data:
-                    writer.writerow({'Address': address}) # , 'Balance': balance})
+                    writer.writerow({'Address': address, 'Balance': balance})
                     total_processed += 1
                 
                 print(f"In progress total non-SC processed: {total_processed}\n")
@@ -54,4 +55,4 @@ def process_addresses_and_write_to_csv(coin_symbol):
             sleep(60)
 
 # Execute the function with the desired coin symbol
-process_addresses_and_write_to_csv("HIT-3f109b")
+process_addresses_and_write_to_csv("GREEN-1c62ca")
